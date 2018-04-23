@@ -1,5 +1,7 @@
-<<<<<<< HEAD
 Iwanaga Koutarou
-=======
+
+Tomoya Kimura
+
+suyokei
+
 komiyarinko
->>>>>>> master
