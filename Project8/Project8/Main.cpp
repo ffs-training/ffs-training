@@ -63,7 +63,7 @@ int main()
 		isContinued = SelectContinue();
 	}
 
-	// メモリの開放必要？
+	// メモリの開放必要？??
 
 	return 0;
 }
