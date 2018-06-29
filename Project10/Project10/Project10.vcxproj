@@ -115,12 +115,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CalcTimeLength.cpp" />
     <ClCompile Include="Conductor.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Note.cpp" />
     <ClCompile Include="Sound.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CalcTimeLength.h" />
     <ClInclude Include="Conductor.h" />
     <ClInclude Include="Note.h" />
     <ClInclude Include="Sound.h" />

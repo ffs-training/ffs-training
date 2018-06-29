@@ -1,6 +1,6 @@
 #pragma once
 
-enum SelectSound {ƒ‰ = 1, ƒ\ = 2};
+enum SelectSound { A4 = 1, G5 = 2};
 
 class Conductor
 {
@@ -9,5 +9,12 @@ public:
 	~Conductor();
 
 	void Play();
+
+private:
+	void ReturnNoteInfo(int&, int&);
+
+	int tempo;
+	int scale;
+	int divisionNum;
 };
 

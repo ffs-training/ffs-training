@@ -1,5 +1,5 @@
 #include "Note.h"
-
+#include "CalcTimeLength.h"
 
 
 Note::Note()
@@ -13,7 +13,7 @@ Note::~Note()
 {
 }
 
-int Note::ReturnFrequency(int num)
+int Note::SetFrequency(int num)
 {
 	if (num == 1)
 	{
@@ -27,16 +27,8 @@ int Note::ReturnFrequency(int num)
 	return frequency;
 }
 
-int Note::ReturnDuration(int num)
+int Note::SetDuration(int tempo, int divisionNum)
 {
-	if (num == 1)
-	{
-		duration = 1000; // 4 •ª‰¹•„
-	}
-	if (num == 2)
-	{
-		duration = 500; // 8 •ª‰¹•„ ((4 •ª‰¹•„‚Ì’·‚³) / 2)
-	}
-
+	duration = CalcTimeLength::CalcTime(tempo, divisionNum);
 	return duration;
 }

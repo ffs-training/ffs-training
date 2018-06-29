@@ -5,8 +5,8 @@ public:
 	Note();
 	~Note();
 
-	int ReturnFrequency(int);
-	int ReturnDuration(int);
+	int SetFrequency(int);
+	int SetDuration(int, int);
 
 private:
 	int frequency;
