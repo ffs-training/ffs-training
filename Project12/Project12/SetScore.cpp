@@ -32,5 +32,7 @@ vector<string> SetScore::SetSelectedScore(string scoreFileName)
 		violin1.push_back(str);
 	}
 
+	ifs.close();
+
 	return violin1;
 }
