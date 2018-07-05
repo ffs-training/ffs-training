@@ -83,6 +83,7 @@ vector<string> PlayBeep::SplitToElement(string singleNote)
 
 void PlayBeep::CalcNote(vector<string> element)
 {
+	// ‰¹•„‚ÌŒvŽZ
 	int aN = 0;
 	int a0 = 440;
 	double n = 0.0;
@@ -186,6 +187,7 @@ void PlayBeep::SetNoteLength(string noteLength)
 
 int PlayBeep::CalcRest(string elementRest)
 {
+	// ‹x•„‚ÌŒvŽZ
 	char* p;
 	char* copy = _strdup(elementRest.c_str());
 	const char* delim = "P";

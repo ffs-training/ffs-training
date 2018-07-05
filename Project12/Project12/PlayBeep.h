@@ -18,8 +18,8 @@ private:
 	int JudgeScoreContent(string);
 	void CalcNote(vector<string>);
 	void SetOctave(string, double&);
-	void SetNoteLength(string);
 	void SetScale(string, double&);
+	void SetNoteLength(string);
 	int CalcRest(string);
 	void SetTempo(string);
 	void CalcWholeToneLength(int);
