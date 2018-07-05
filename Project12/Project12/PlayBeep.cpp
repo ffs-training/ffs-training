@@ -33,17 +33,17 @@ void PlayBeep::CalcWholeToneLength(int tempo)
 }
 
 
-int PlayBeep::JudgeScoreContent(string element)
+int PlayBeep::JudgeScoreContent(string line)
 {
-	if (element.find("tempo") != std::string::npos)
+	if (line.find("tempo") != std::string::npos)
 	{
 		return noteOrRestOrTempo(Tempo); // ƒeƒ“ƒ|
 	}
-	else if (element.find("P") != std::string::npos)
+	else if (line.find("P") != std::string::npos)
 	{
 		return noteOrRestOrTempo(Rest); // ‹x•„
 	}
-	else if (element.find("O") != std::string::npos)
+	else if (line.find("O") != std::string::npos)
 	{
 		return noteOrRestOrTempo(Note); // ‰¹•„ (‰¹•„‚Í O ‚©‚çŽn‚Ü‚é‚æ‚¤‚É‚µ‚Ä‚ ‚é)
 	}
@@ -55,7 +55,7 @@ int PlayBeep::JudgeScoreContent(string element)
 	return 0;
 }
 
-vector<string> PlayBeep::SplitToElement(string singleNote)
+vector<string> PlayBeep::SplitToElement(string singleNote) // 1 ‰¹‚ð—v‘f‚É•ª‰ð
 {
 	vector<string> element;
 	char* p;
@@ -81,16 +81,16 @@ vector<string> PlayBeep::SplitToElement(string singleNote)
 	return element;
 }
 
-void PlayBeep::CalcNote(vector<string> element)
+void PlayBeep::CalcNote(vector<string> noteElement)
 {
 	// ‰¹•„‚ÌŒvŽZ
 	int aN = 0;
 	int a0 = 440;
 	double n = 0.0;
 
-	string octave = element[0];
-	string Notelength = element[1];
-	string scale = element[2];
+	string octave = noteElement[0];
+	string Notelength = noteElement[1];
+	string scale = noteElement[2];
 
 	SetOctave(octave, n);
 	SetScale(scale, n);
@@ -220,12 +220,12 @@ void PlayBeep::Play(vector<string>* score)
 
 	for (itr = score->begin(); itr != score->end(); ++itr)
 	{
-		string singleTone = *itr;	
-		switch (JudgeScoreContent(singleTone))
+		string line = *itr;	
+		switch (JudgeScoreContent(line))
 		{
 		case Note:
 		{
-			CalcNote(SplitToElement(singleTone));
+			CalcNote(SplitToElement(line));
 			// ’l‚ð‚à‚Æ‚ÉŒvŽZ
 			Beep(frequency, duration);
 			cout << "Note < f: " << frequency << ", d: " << duration << " >\n";
@@ -233,13 +233,13 @@ void PlayBeep::Play(vector<string>* score)
 		}
 		case Rest:
 		{
-			Sleep(CalcRest(singleTone));
-			cout << "Rest < " << CalcRest(singleTone) << " >\n";
+			Sleep(CalcRest(line));
+			cout << "Rest < " << CalcRest(line) << " >\n";
 			break;
 		}
 		case Tempo:
 		{
-			SetTempo(singleTone);
+			SetTempo(line);
 			CalcWholeToneLength(tempo);
 			cout << "* tempo [ " << tempo << " ]\n";
 			break;
