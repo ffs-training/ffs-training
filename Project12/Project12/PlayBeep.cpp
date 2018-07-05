@@ -29,7 +29,7 @@ PlayBeep::~PlayBeep()
 
 void PlayBeep::CalcWholeToneLength(int tempo)
 {
-	wholeToneLength = (240000 / tempo);
+	wholeToneLength = (4 * 60 * 1000) / tempo;
 }
 
 
@@ -45,7 +45,7 @@ int PlayBeep::JudgeScoreContent(string element)
 	}
 	else if (element.find("O") != std::string::npos)
 	{
-		return noteOrRestOrTempo(Note); // ‰¹•„
+		return noteOrRestOrTempo(Note); // ‰¹•„ (‰¹•„‚Í O ‚©‚çŽn‚Ü‚é‚æ‚¤‚É‚µ‚Ä‚ ‚é)
 	}
 	else
 	{
