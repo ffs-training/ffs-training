@@ -13,7 +13,7 @@ enum scaleNum { C = -9, D = -7, E = -5, F = -4, G = -2, A = 0, B = 2 };
 enum noteOrRestOrTempo { Note = 1, Rest = 2, Tempo = 3 };
 
 int PlayBeep::wholeToneLength;
-int PlayBeep::tempo = 100; // default Çê›íË
+int PlayBeep::tempo = 100; // default ílÇê›íË
 
 PlayBeep::PlayBeep()
 {
@@ -89,7 +89,7 @@ void PlayBeep::CalcNote(vector<string> noteElement)
 	double n = 0.0;
 
 	string octave = noteElement[0];
-	string Notelength = noteElement[1];
+	string noteLength = noteElement[1];
 	string scale = noteElement[2];
 
 	SetOctave(octave, n);
@@ -97,7 +97,7 @@ void PlayBeep::CalcNote(vector<string> noteElement)
 	aN = (int)(a0 * pow(2, (n / 12.0)));
 	frequency = aN;
 
-	SetNoteLength(Notelength);
+	SetNoteLength(noteLength);
 }
 
 void PlayBeep::SetOctave(string octave, double &n)
