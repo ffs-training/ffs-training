@@ -89,7 +89,7 @@ void PlayBeep::CalcNote(vector<string> noteElement)
 	double n = 0.0;
 
 	string octave = noteElement[0];
-	string noteLength = noteElement[1];
+	string soundLength = noteElement[1];
 	string scale = noteElement[2];
 
 	SetOctave(octave, n);
@@ -97,7 +97,7 @@ void PlayBeep::CalcNote(vector<string> noteElement)
 	aN = (int)(a0 * pow(2, (n / 12.0)));
 	frequency = aN;
 
-	SetNoteLength(noteLength);
+	SetSoundLength(soundLength);
 }
 
 void PlayBeep::SetOctave(string octave, double &n)
@@ -169,7 +169,7 @@ void PlayBeep::SetScale(string scale, double &n)
 }
 
 
-void PlayBeep::SetNoteLength(string noteLength)
+void PlayBeep::SetSoundLength(string noteLength)
 {
 	// ‰¹’·‚Ì”»’è
 	if (noteLength.find("L") != std::string::npos)

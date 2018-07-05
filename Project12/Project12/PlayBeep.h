@@ -19,7 +19,7 @@ private:
 	void CalcNote(vector<string>);
 	void SetOctave(string, double&);
 	void SetScale(string, double&);
-	void SetNoteLength(string);
+	void SetSoundLength(string);
 	int CalcRest(string);
 	void SetTempo(string);
 	void CalcWholeToneLength(int);
