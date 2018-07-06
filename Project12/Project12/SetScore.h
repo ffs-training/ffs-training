@@ -5,9 +5,11 @@ using namespace std;
 
 class SetScore
 {
+private:
+	string fileName;
 public:
 	SetScore();
 	~SetScore();
-	vector<string> SetSelectedScore(string);
+	vector<string> SetSelectedScore(int);
 };
 

@@ -11,8 +11,6 @@ public:
 	void Play();
 
 private:
-	void ReturnNoteInfo(int&, int&);
-
 	int tempo;
 	int scale;
 	int divisionNum;

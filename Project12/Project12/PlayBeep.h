@@ -7,6 +7,10 @@ using namespace std;
 class PlayBeep :
 	public PlayMusic
 {
+private:
+	static int tempo;
+	static int wholeToneLength;
+
 public:
 	PlayBeep();
 	~PlayBeep();
@@ -14,19 +18,7 @@ public:
 	void Play(vector<string>*);
 
 private:
-	vector<string> SplitToElement(string);
 	int JudgeScoreContent(string);
-	void CalcNote(vector<string>);
-	void SetOctave(string, double&);
-	void SetScale(string, double&);
-	void SetSoundLength(string);
-	int CalcRest(string);
-	void SetTempo(string);
-	void CalcWholeToneLength(int);
 
-	static int tempo;
-	static int wholeToneLength;
-	int frequency;
-	int duration;
 };
 

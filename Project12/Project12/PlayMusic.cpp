@@ -1,4 +1,7 @@
 #include "PlayMusic.h"
+#include <vector>
+#include <string>
+using namespace std;
 
 
 
@@ -12,6 +15,6 @@ PlayMusic::~PlayMusic()
 }
 
 
-void PlayMusic::Play()
+void PlayMusic::Play(vector<string>* score)
 {
 }

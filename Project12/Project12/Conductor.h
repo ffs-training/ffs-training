@@ -1,5 +1,5 @@
 #pragma once
-#include <string>
+#include "PlayMusic.h"
 using namespace std;
 class Conductor
 {
@@ -7,9 +7,7 @@ public:
 	Conductor();
 	~Conductor();
 	void SetAndPlay();
-
 private:
-	void selectScore();
-	static string fileName;
+	void CreatePlayer(int, PlayMusic*&);
 };
 

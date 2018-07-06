@@ -15,10 +15,23 @@ SetScore::~SetScore()
 }
 
 
-vector<string> SetScore::SetSelectedScore(string scoreFileName)
+vector<string> SetScore::SetSelectedScore(int num)
 {
+	if (num == 1)
+	{
+		fileName = "Violin1.txt";
+	}
+	if (num == 2)
+	{
+		fileName = "Violin1TempoArrange.txt";
+	}
+	if (num == 3)
+	{
+		fileName = "TwinkleTwinkleLittleStar.txt";
+	}
+
 	ifstream ifs;
-	ifs.open(scoreFileName);
+	ifs.open(fileName);
 
 	if (ifs.fail())
 	{
@@ -26,13 +39,13 @@ vector<string> SetScore::SetSelectedScore(string scoreFileName)
 	}
 
 	string str;
-	vector<string> violin1;
+	vector<string> score;
 	while (ifs && getline(ifs, str))
 	{
-		violin1.push_back(str);
+		score.push_back(str);
 	}
 
 	ifs.close();
 
-	return violin1;
+	return score;
 }
